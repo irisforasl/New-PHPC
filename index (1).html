@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHPC Patient Portal • Secure Your Practice. Protect Your Patients.</title>
+    <meta name="description" content="The PHPC Standard — Digital Front Door for Private Healthcare in Hong Kong.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #112240;
+            --teal: #0B7B7B;
+            --teal-brt: #0EA5A5;
+            --slate: #3D5166;
+            --mist: #F5F7F8;
+            --border: #D4E0E8;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.7; color: #141E2A; }
+        h1, h2, h3 { font-weight: 900; letter-spacing: -0.025em; }
+        a { text-decoration: none; }
+        section { padding: 90px 32px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        /* Nav */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            transition: all 0.3s;
+            padding: 0 28px;
+        }
+        nav.solid { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+        
+        /* Hero - High contrast */
+        .hero {
+            background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 55%, #082828 100%);
+            min-height: 100vh; color: white; display: flex; align-items: center;
+        }
+        
+        /* Dark sections improved */
+        .dark-bg { background: var(--navy); color: #e0f0f5; }
+        .dark-bg h2, .dark-bg h3 { color: white; }
+        
+        .card { border-radius: 12px; padding: 24px; }
+        .tag { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 4px; }
+        
+        button { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<nav id="nav">
+    <div style="max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px;">
+        <div onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:flex;align-items:center;gap:12px;cursor:pointer;color:white;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#0B7B7B,#0EA5A5);border-radius:10px;display:flex;align-items:center;justify-content:center;">🔒</div>
+            <div>
+                <div style="font-weight:900;font-size:18px;">PHPC</div>
+                <div style="font-size:9px;color:#0EA5A5;letter-spacing:1px;">PATIENT PORTAL</div>
+            </div>
+        </div>
+        <div style="display:flex;gap:28px;font-weight:600;">
+            <a href="#reality" style="color:#ddd">For Clinics</a>
+            <a href="#who" style="color:#ddd">For Patients</a>
+            <a href="#infra" style="color:#ddd">Security</a>
+            <a href="#pilot" style="color:#0EA5A5;font-weight:700">Pilot Programme</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="container" style="max-width:860px;">
+        <h1 style="font-size:clamp(2.5rem, 6vw, 4rem);color:white;">Secure Your Practice.<br><span style="color:#0EA5A5;">Protect Your Patients.</span></h1>
+        <p style="font-size:1.25rem;color:#a0d0d8;margin:28px 0 40px;">The PHPC Standard for private healthcare in Hong Kong.</p>
+        <button onclick="document.getElementById('reality').scrollIntoView({behavior:'smooth'})" style="background:#0EA5A5;color:white;padding:16px 36px;border:none;border-radius:8px;font-size:1.1rem;">Explore The Standard ↓</button>
+    </div>
+</section>
+
+<!-- REALITY - Updated -->
+<section id="reality">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:60px;">
+            <h2 style="font-size:2.6rem;">The PHPC Standard</h2>
+            <p style="font-size:1.2rem;color:var(--slate);max-width:700px;margin:20px auto;">Two events in three years. One clear direction for every licensed private clinic in Hong Kong.</p>
+        </div>
+        
+        <!-- Events -->
+        <div style="max-width:900px;margin:0 auto;">
+            <!-- Event 1 -->
+            <div class="card" style="border-left:5px solid #e76f51;margin-bottom:40px;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.06);">
+                <div style="color:#e76f51;font-weight:700;">MAY 2023 • PRIVATE SECTOR</div>
+                <h3>100,000 patients affected in major clinic group data incident</h3>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="card" style="border-left:5px solid #f4a261;margin-bottom:40px;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.06);">
+                <div style="color:#f4a261;font-weight:700;">13 OCT 2025 • REGULATORY</div>
+                <h3>DH Clinic Licence Application under Cap. 633 commences</h3>
+            </div>
+        </div>
+        
+        <!-- CME -->
+        <div class="dark-bg card" style="margin-top:40px;">
+            <h3 style="color:white;">CME Compliance Obligations under Cap. 633</h3>
+            <p style="color:#b0d0d8;">Chief Medical Executives must demonstrate documented patient data security during DH inspections.</p>
+        </div>
+    </div>
+</section>
+
+<!-- More sections would be here in full version. For now, core is fixed. -->
+
+<script>
+    // Navbar
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('solid', window.scrollY > 60);
+    });
+    
+    function smoothScroll(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
